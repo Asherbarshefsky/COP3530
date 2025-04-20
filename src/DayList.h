@@ -7,6 +7,7 @@
 #include <vector>
 
 
+
 class DayList {
 public:
     struct Day {
@@ -40,6 +41,9 @@ public:
     void addDay(Day *day);
 
     Day *getHead() const;
+
+    enum SortMode { BY_CAPACITY, BY_WEATHER, BY_BOTH };
+    void sort(SortMode mode);
 
 private:
     Day *head;

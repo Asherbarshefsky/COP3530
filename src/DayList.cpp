@@ -1,4 +1,5 @@
 #include "DayList.h"
+#include "HeapSort.h"
 #include <iostream>
 #include <cmath>
 
@@ -156,4 +157,8 @@ void DayList::addDay(Day *day) {
 
 DayList::Day *DayList::getHead() const {
     return this->head;
+}
+
+void DayList::sort(SortMode mode) {
+    HeapSort::heapSort(head, tail, mode);
 }

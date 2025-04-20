@@ -1,5 +1,6 @@
 #include <iostream>
 #include "DayList.h"
+#include "HeapSort.h"
 
 int main() {
     const auto *days = new DayList();
