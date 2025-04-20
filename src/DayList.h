@@ -21,7 +21,7 @@ public:
         bool isOpen;
         Day *next{};
 
-        Day(const unsigned int year, const unsigned int month, const unsigned int day, unsigned int dayOfWeek,
+        Day(const unsigned int year, const unsigned int month, const unsigned int day, const unsigned int dayOfWeek,
             const bool isBeforeNoon, std::string park, const float capacity, const unsigned int weather,
             const bool isOpen): year(year), month(month), day(day),
                                 dayOfWeek(dayOfWeek), isBeforeNoon(isBeforeNoon), park(std::move(park)),
