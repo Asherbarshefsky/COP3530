@@ -40,6 +40,8 @@ public:
 
     void addDay(Day *day);
 
+    void sortByDate();
+
     Day *getHead() const;
 
     enum SortMode { BY_CAPACITY, BY_WEATHER, BY_BOTH };
