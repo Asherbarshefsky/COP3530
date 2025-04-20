@@ -13,10 +13,10 @@ namespace Sorter {
         static void sortDays(DayList::Day** headPointer, DayList::Day** tailPointer);
 
     private:
-        // compares two Day pointers (yy, mm, dd)
+        // compares two, day pointers (yy, mm, dd)
         static bool comesBefore(const DayList::Day* a, const DayList::Day* b);
 
-        // moves elements greater than pivot to left of index
+        // moves elements greater than pivot to the left of index
         static int partition(std::vector<DayList::Day*>& arr, int low, int high);
 
         // quick sort recursion

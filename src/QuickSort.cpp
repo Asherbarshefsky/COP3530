@@ -1,5 +1,4 @@
 #include "QuickSort.h"
-#include <algorithm>
 
 namespace Sorter {
 
@@ -55,7 +54,7 @@ namespace Sorter {
 
         arr.back()->next = nullptr;
 
-        // update head & tail in original list
+        // update head and tail in the original list
         *headPointer = arr.front();
         *tailPointer = arr.back();
     }
