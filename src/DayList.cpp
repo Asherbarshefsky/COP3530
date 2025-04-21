@@ -156,14 +156,18 @@ void DayList::addDay(Day *day) {
     this->tail = day->next;
 }
 
-DayList::Day *DayList::getHead() const {
-    return this->head;
-}
-
 void DayList::sort(SortMode mode) {
     HeapSort::heapSort(head, tail, mode);
 }
 
-void DayList::sortByDate() {
-    Sorter::QuickSort::sortDays(&head, &tail);
+void DayList::sort(SortMode mode, bool useQuick) {
+    if (useQuick) {
+        Sorter::QuickSort::sortDays(&head, &tail, mode);
+    } else {
+        HeapSort::heapSort(head, tail, mode);
+    }
+}
+
+DayList::Day *DayList::getHead() const {
+    return this->head;
 }

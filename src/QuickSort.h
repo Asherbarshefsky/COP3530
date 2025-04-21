@@ -10,9 +10,11 @@ namespace Sorter {
         // sorts the link list where the head or tail pointers are passed into
         // headPointer points to the earliest day
         // tailPointer points to the last day
-        static void sortDays(DayList::Day** headPointer, DayList::Day** tailPointer);
+        static void sortDays(DayList::Day** headRef, DayList::Day** tailRef, DayList::SortMode mode);
 
     private:
+        static DayList::SortMode s_mode;
+
         // compares two, day pointers (yy, mm, dd)
         static bool comesBefore(const DayList::Day* a, const DayList::Day* b);
 
@@ -21,6 +23,7 @@ namespace Sorter {
 
         // quick sort recursion
         static void quickSortVec(std::vector<DayList::Day*>& arr, int low, int high);
+
     };
 }
 
