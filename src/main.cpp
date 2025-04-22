@@ -69,7 +69,8 @@ struct Button {
 // Display sorted days
 struct Result {
     std::string park;
-    unsigned int month, day, year;
+    unsigned int month
+    unsigned int day;
     float capacity;
     unsigned int weather;
 };
@@ -102,6 +103,11 @@ int main() {
     algo[0].checked = true;
 
     Button searchBtn(font, "Search", 220, 330, 160, 50);
+
+    const char* monthNames[] = {
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    };
 
     // Main loop: selection UI
     while (selectWin.isOpen()) {
@@ -144,7 +150,7 @@ int main() {
                             if (!d->isBeforeNoon || !d->isOpen) continue;
 
                             results.push_back({
-                                d->park, d->month, d->day, d->year, d->capacity, d->weather });
+                                d->park, d->month, d->day, d->capacity, d->weather });
                         }
 
                         // Results window
@@ -183,7 +189,7 @@ int main() {
 
                             c1.setPosition({20, 60});
                             c2.setPosition({260,60});
-                            c3.setPosition({380,60});
+                            c3.setPosition({383,60});
                             c4.setPosition({500,60});
 
                             resWin.draw(c1);
@@ -199,7 +205,7 @@ int main() {
                                 t1.setFillColor(sf::Color::Black);
                                 t1.setPosition({20,y}); resWin.draw(t1);
 
-                                std::string date = std::to_string(r.month) + "/" + std::to_string(r.day)   + "/" + std::to_string(r.year);
+                                std::string date = std::string(monthNames[r.month - 1]) + ", " + std::to_string(r.day);
                                 sf::Text t2(font, sf::String(date), 16);
 
                                 t2.setFillColor(sf::Color::Black);
@@ -209,7 +215,7 @@ int main() {
                                 sf::Text t3(font, sf::String(cap), 16);
 
                                 t3.setFillColor(sf::Color::Black);
-                                t3.setPosition({380,y}); resWin.draw(t3);
+                                t3.setPosition({385,y}); resWin.draw(t3);
 
                                 sf::Text t4(font, sf::String(weatherNames[r.weather]), 16);
 
@@ -236,7 +242,7 @@ int main() {
         selectWin.draw(mainTitle);
 
         // Subtitle
-        sf::Text subtitle(font, sf::String("Select Priority & Algorithm"), 18);
+        sf::Text subtitle(font, sf::String("Select Priority"), 18);
         subtitle.setFillColor(sf::Color::Black);
         subtitle.setPosition({20,60});
         selectWin.draw(subtitle);
