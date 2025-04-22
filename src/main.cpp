@@ -231,7 +231,7 @@ int main() {
                     sf::RenderWindow resWin(sf::VideoMode(resSize), sf::String("Top Days to Visit"));
                     resWin.setFramerateLimit(30);
 
-                    // Keep the results window open until the user closes it
+                    // Keep the result window open until the user closes it
                     while (resWin.isOpen()) {
                         while (auto e2 = resWin.pollEvent()) {
                             if (e2->is<sf::Event::Closed>())
@@ -240,7 +240,7 @@ int main() {
 
                         resWin.clear(sf::Color::White);
 
-                        // header & columns
+                        // header and columns
                         sf::Text hdr(font, sf::String("Top Days to Visit"), 24);
                         hdr.setFillColor(sf::Color::Black);
                         hdr.setPosition({20.f, 20.f});
