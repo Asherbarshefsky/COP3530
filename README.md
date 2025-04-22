@@ -1,3 +1,5 @@
+This program runs out of the main.cpp file!!!!
+
 This program uses SFML 3 as the UI code. To run this code, you will need a specific file called "arial.ttf". 
 This file should live in the cmake-build-debug file. 
 It might not be necessary, but when trying to build and run this code, this issue would always pop up. 
