@@ -69,7 +69,7 @@ struct Button {
 // Display sorted days
 struct Result {
     std::string park;
-    unsigned int month
+    unsigned int month;
     unsigned int day;
     float capacity;
     unsigned int weather;
