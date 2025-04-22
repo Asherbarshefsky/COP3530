@@ -328,7 +328,7 @@ int main() {
 
         // Draw selection UI
         selectWin.clear(sf::Color::White);
-        sf::Text mainTitle(font, sf::String("Theme Park Crowd Calendar"), 24);
+        sf::Text mainTitle(font, sf::String("Theme Park Calendar"), 24);
         mainTitle.setFillColor(sf::Color::Black);
         mainTitle.setPosition({20,20});
         selectWin.draw(mainTitle);
